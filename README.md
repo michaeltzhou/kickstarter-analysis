@@ -1,2 +1,21 @@
-# kickstarter-analysis
-Performing Kickstarter analysis to discover trends
+# Kickstarting with Excel
+
+## Overview of Project
+
+### Purpose
+  The purpose of this project is to exectute Excel skills that were supposed to be obtained during this module, such as working with PivotTables, PivotCharts, and filters, as well as using such Excel commands as countifs() and sum(). This was applied in the context of analyzing a set of Kickstarter fundraising data and examining the funding outcomes for kickstarters in the 'Theatre' category based on launch date and range of the funding goal. This subset of data was then used to create graphs to be used for visualization.
+## Analysis and Challenges
+
+### Analysis of Outcomes Based on Launch Date
+A PivotTable was set up with 'Parent category' and 'years' in the filter tab, 'outcomes' in the columns tab, 'Date Created Conversion' in the rows tab, and 'Count of outcomes' in the values tab. Within this new table, the column labels were filtered to exclude live kickstarters and was then ordered so that successful outcomes were listed first in the table. A chart was then created to illustrate the outcomes of theatre kickstarters based on launch month as shown in the link below. <br>
+[Theater Outcomes Based on Launch Date](/resources/Theater_Outcomes_vs_Launch.png)
+### Analysis of Outcomes Based on Goals
+A new sheet was generated in order to conduct analysis on outcomes based on launch date. The data was set to be grouped in ranges starting from 'Less than 1000' and '1000 to 4999' to '45000 to 49999' and '50000 or more'. Columns were established to count the number of successful, failed, and canceled projects, which were individually calculated through the countifs() function. So to calculate the number of successful plays with a goal of less than $1000, the following equation was used `=COUNTIFS(Kickstarter!F:F,"successful",Kickstarter!D:D,"<1000",Kickstarter!R:R,"plays")` <br> This set the criteria of the plays having to be successful in the 'outcome' column, plays in the 'subcategory' column, and a value less than 1000 in the 'goal' column and then output the total number of plays that met the set criteria. This similar formula was used to fill out the remainder of the table, changing what was to be specified in 'outcome' and the value range for 'goal'. With each individual relevant outcome tabulated per range, the outcomes were summed to calculate the percentage of successful, failed, and canceled outcomes. These values were then used to generate a line chart, shown below. <br>
+[Outcomes_vs_Goals](/resources/Outcomes_vs_Goals.png)
+### Challenges and Difficulties Encountered
+I personally did not have many challenges with the Excel side of the project, rather I ran into a few bumps while trying to properly setup the github respository for grading. I wasn't sure how to add the .png files for deliverable 1 & 2 to a resources folder, so I ended up creating a resources folder with a blank file and then deleting the blank file after I uploaded the .png files. 
+## Results
+One conclusion that I can draw about the outcomes based on launch date is that May seems to be the best month to launch a successful kickstarter, if not the May to July range. Another conclusion that can be drawn is that December is likely to be a bad time to launch a kickstarter, as the success rate appears to be worse. Something interesting to consider within this dataset is the percentage of successful outcomes rather than the sheer amount of successful projects, as even though there are more successes in the May to July range, there are also more projects being started. <br>
+As for the goal amount, it appears that having a lower goal value correlates with a higher likelyhood of being successfully funded. Something to note, however, is that the higher ranges had significantly fewer data entries to draw from, making the success rate more volatile. <br>
+As with all data sets, this kickerstarter data set is limited by the sheer number of entries. With more data, the sample set would become closer and closer to being descriptive of the population, making analysis of it more relavant to the whole population. Especially with above $25000, there were much fewer projects to pull data from than below $25000, which makes analysis of projects in the above $25000 range less reliable. <br>
+Other tables could be created using different filters, such as different subcategories as gaming, or if being in the spotlight or staff pick increased the likelyhood of a project being successfully funded, or if certain countries were more likely to have more backers on certain projects or higher average donations.
